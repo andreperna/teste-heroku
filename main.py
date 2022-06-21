@@ -10,7 +10,7 @@ class CategoriaIdade(str, Enum):
 
 @app.get('/')
 def root():
-    return {'msg':'Hello World'}
+    return {'msg':'Hello World2'}
 
 @app.get('/items/{item}')
 def root(item:int):
