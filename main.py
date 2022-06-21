@@ -1,5 +1,10 @@
+from dotenv import load_dotenv
+from os import getenv
 from enum import Enum
 from fastapi import FastAPI
+
+load_dotenv()
+
 
 app = FastAPI()
 
@@ -26,3 +31,8 @@ def query(cidade:str=None, limit:int=10):
         'cidade': cidade,
         'limite': limit
     }
+
+@app.get('/env')
+def env():
+    return {'SERVER':getenv('SERVER')}
+
