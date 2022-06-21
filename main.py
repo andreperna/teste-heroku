@@ -3,6 +3,8 @@ from os import getenv
 from enum import Enum
 from fastapi import FastAPI
 
+import uvicorn
+
 load_dotenv()
 
 
@@ -35,4 +37,5 @@ def query(cidade:str=None, limit:int=10):
 @app.get('/env')
 def env():
     return {'SERVER':getenv('SERVER')}
+
 
